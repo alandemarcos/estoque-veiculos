@@ -1,0 +1,89 @@
+### Variáveis
+@baseUrl = http://localhost:8080
+
+### ========== MARCAS ==========
+
+### Criar marca
+POST {{baseUrl}}/marcas
+Content-Type: application/json
+
+{
+  "nome": "Toyota"
+}
+
+### Listar marcas
+GET {{baseUrl}}/marcas
+
+### ========== MODELOS ==========
+
+### Criar modelo (requer marca existente - use marcaId retornado em POST /marcas)
+POST {{baseUrl}}/modelos
+Content-Type: application/json
+
+{
+  "nome": "Corolla",
+  "marcaId": 1
+}
+
+### Listar modelos
+GET {{baseUrl}}/modelos
+
+### ========== VEÍCULOS ==========
+
+### Criar veículo (exemplo completo)
+POST {{baseUrl}}/veiculos
+Content-Type: application/json
+
+{
+  "marca": "Toyota",
+  "modelo": "Corolla",
+  "ano": 2022,
+  "cor": "Prata",
+  "preco": 120000,
+  "quilometragem": 15000,
+  "status": "DISPONIVEL"
+}
+
+### Listar todos os veículos
+GET {{baseUrl}}/veiculos
+
+### Listar veículos com filtro de marca
+GET {{baseUrl}}/veiculos?marca=Toyota
+
+### Listar veículos com filtro de modelo
+GET {{baseUrl}}/veiculos?modelo=Corolla
+
+### Listar veículos com filtro de ano
+GET {{baseUrl}}/veiculos?ano=2022
+
+### Listar veículos com filtro de status
+GET {{baseUrl}}/veiculos?status=DISPONIVEL
+
+### Listar veículos com preço máximo
+GET {{baseUrl}}/veiculos?precoMax=150000
+
+### Listar veículos com preço mínimo
+GET {{baseUrl}}/veiculos?precoMin=100000
+
+### Listar veículos com faixa de preço
+GET {{baseUrl}}/veiculos?precoMin=100000&precoMax=130000
+
+### Buscar veículo por ID
+GET {{baseUrl}}/veiculos/1
+
+### Atualizar veículo
+PUT {{baseUrl}}/veiculos/1
+Content-Type: application/json
+
+{
+  "marca": "Toyota",
+  "modelo": "Corolla",
+  "ano": 2022,
+  "cor": "Preto",
+  "preco": 115000,
+  "quilometragem": 15000,
+  "status": "RESERVADO"
+}
+
+### Excluir veículo
+DELETE {{baseUrl}}/veiculos/1
