@@ -31,12 +31,12 @@ public class VeiculoController {
     @GetMapping
     @Operation(summary = "Listar veículos com filtros opcionais")
     public ResponseEntity<List<VeiculoDTO>> listar(
-            @Parameter(description = "Filtrar por marca") @RequestParam(required = false) String marca,
-            @Parameter(description = "Filtrar por modelo") @RequestParam(required = false) String modelo,
-            @Parameter(description = "Filtrar por ano") @RequestParam(required = false) Integer ano,
-            @Parameter(description = "Filtrar por status") @RequestParam(required = false) StatusVeiculo status,
-            @Parameter(description = "Preço mínimo") @RequestParam(required = false) Double precoMin,
-            @Parameter(description = "Preço máximo") @RequestParam(required = false) Double precoMax) {
+            @Parameter(description = "Filtrar por marca") @RequestParam(value = "marca", required = false) String marca,
+            @Parameter(description = "Filtrar por modelo") @RequestParam(value = "modelo", required = false) String modelo,
+            @Parameter(description = "Filtrar por ano") @RequestParam(value = "ano", required = false) Integer ano,
+            @Parameter(description = "Filtrar por status") @RequestParam(value = "status", required = false) StatusVeiculo status,
+            @Parameter(description = "Preço mínimo") @RequestParam(value = "precoMin", required = false) Double precoMin,
+            @Parameter(description = "Preço máximo") @RequestParam(value = "precoMax", required = false) Double precoMax) {
         List<VeiculoDTO> list = veiculoService.listar(marca, modelo, ano, status, precoMin, precoMax);
         return ResponseEntity.ok(list);
     }
