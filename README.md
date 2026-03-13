@@ -101,4 +101,4 @@ http://localhost:5500
 
 O arquivo `requests.http` contém exemplos prontos para uso no VS Code (extensão REST Client) ou em IDEs compatíveis.
 
-Link do repositório: https://github.com/yourusername/estoque-veiculos
+Link do repositório: https://github.com/alandemarcos/estoque-veiculos
