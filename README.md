@@ -100,3 +100,5 @@ python -m http.server 5500 -d frontend
 http://localhost:5500
 
 O arquivo `requests.http` contém exemplos prontos para uso no VS Code (extensão REST Client) ou em IDEs compatíveis.
+
+Link do repositório: https://github.com/yourusername/estoque-veiculos
